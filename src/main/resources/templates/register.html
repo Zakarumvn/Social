@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="master">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Social</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet'
+          type='text/css'/>
+    <link href="/css/lato.css" rel='stylesheet' type='text/css'/>
+
+    <link href="/css/main.css" rel="stylesheet"/>
+
+    <link rel="stylesheet" href="/webjars/bootstrap/3.3.6/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/webjars/bootstrap/3.3.6/css/bootstrap-theme.min.css"/>
+
+    <style>
+        body {
+            font-family: 'Lato';
+        }
+
+    </style>
+</head>
+<body>
+<div layout:fragment="content">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="card">
+                <div class="panel-body">
+                    <form class="form-horizontal" th:action="@{/user/register}" th:object="${user}" method="post">
+                        <div class="form-group">
+                            <label for="login" class="col-md-4 control-label">Login</label>
+                            <div class="col-md-6">
+                                <input id="login" type="text" class="form-control" name="login" th:value="${login}" required="required"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password" class="col-md-4 control-label">Hasło</label>
+                            <div class="col-md-6">
+                                <input id="password" type="password" class="form-control" name="password" th:value="${password}" required="required"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="passwordConfirm" class="col-md-4 control-label">Hasło</label>
+                            <div class="col-md-6">
+                                <input id="passwordConfirm" type="password" class="form-control" name="passwordConfirm" th:value="${passwordConfirm}" required="required"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="col-md-4 control-label">Adres e-mail</label>
+                            <div class="col-md-6">
+                                <input id="email" type="text" class="form-control" name="email" th:value="${email}" required="required"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="firstName" class="col-md-4 control-label">Imię</label>
+                            <div class="col-md-6">
+                                <input id="firstName" type="text" class="form-control" name="firstName" th:value="${firstName}" required="required"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="lastName" class="col-md-4 control-label">Nazwisko</label>
+                            <div class="col-md-6">
+                                <input id="lastName" type="text" class="form-control" name="lastName" th:value="${lastName}" required="required"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="birthDate" class="col-md-4 control-label">Data urodzenia</label>
+                            <div class="col-md-6">
+                                <input id="birthDate" type="date" class="form-control" name="birthDate" th:value="${birthDate}" required="required"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="city" class="col-md-4 control-label">Miasto</label>
+                            <div class="col-md-6">
+                                <input id="city" type="text" class="form-control" name="city" th:value="${city}" required="required"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-6 col-md-offset-4">
+                                <button type="submit" class="btn btn-primary">
+                                    Zarejestruj
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+</body>
+</html>
